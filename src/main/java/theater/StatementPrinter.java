@@ -26,7 +26,9 @@ public class StatementPrinter {
         final StringBuilder result = new StringBuilder("Statement for " + invoice.getCustomer()
                 + System.lineSeparator());
         for (Performance p : invoice.getPerformances()) {
-            result.append(String.format("  %s: %s (%s seats)%n", getPlay(p).getName(), usd(getAmount(p)), p.getAudience()));
+            result.append(String.format("  %s: %s (%s seats)%n", getPlay(p).getName(),
+                                                                    usd(getAmount(p)),
+                                                                    p.getAudience()));
         }
 
         result.append(String.format("Amount owed is %s%n", usd(getTotalAmount())));
